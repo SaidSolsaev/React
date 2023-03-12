@@ -6,11 +6,11 @@ import { useStateProvider } from '../Utils/StateProvider';
 
 
 
-export default function NavBar() {
+export default function NavBar({navBackground}) {
   const [{userInfo}] = useStateProvider();
 
   return (
-    <Container>
+    <Container navBackground={navBackground}>
       <div className='search-bar'>
         <FaSearch />
         <input type="text" placeholder='Songs, Artists or Podcasts...' />
@@ -32,10 +32,10 @@ const Container = styled.div`
   align-items: center;
   padding: 2rem;
   height: 5vh;
-  postioin: sticky;
+  position: sticky;
   top: 0;
   transition: .3s ease-in-out;
-  background-color: ${({navBackground}) => navBackground ? "rgba(0,0,0,.7)" : "none"};
+  background-color: ${({navBackground}) => navBackground ? "#000000dc" : "none"};
 
   .search-bar {
     background-color: white;

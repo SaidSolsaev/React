@@ -37,7 +37,6 @@ export default function SideBar() {
 
 
 const Container = styled.div`
-  
     background-color: black;
     color: #b3b3b3;
     display: flex;
