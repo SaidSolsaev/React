@@ -15,6 +15,7 @@ export default function App() {
       console.log(token);
       dispatch({type: reducerCases.SET_TOKEN, token});
     };
+    document.title = "Spotify Clone";
   }, [token, dispatch]);
 
   return (

@@ -17,7 +17,7 @@ export default function NavBar({navBackground}) {
       </div>
       
       <div className='profile'>
-        <a href='#'>
+        <a href='https://open.spotify.com/user/said095'>
           <CgProfile />
           <span>{userInfo?.userName}</span>
         </a>

@@ -51,12 +51,28 @@ export default function CurrentTrack() {
             )
         }
     </Container>
-  )
+  );
 }
 
 
-
-
 const Container = styled.div`
+    .track{
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        &-info {
+            display: flex;
+            flex-direction: column;
+            gap: .3rem;
+            h4 {
+                color: white;
+                font-size: 18px;
+            }
 
+            h6{
+                color: #b3b3b3;
+                font-size: 14px;
+            }
+        }
+    }
 `;

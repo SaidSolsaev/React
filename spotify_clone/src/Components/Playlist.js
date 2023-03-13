@@ -29,7 +29,11 @@ export default function Playlist() {
         };
         getPlaylistData();
 
-    }, [token, dispatch])
+    }, [token, dispatch]);
+
+    const changeCurrPlaylist = (selectedPlaylistId) => {
+        dispatch({type: reducerCases.SET_PLAYLIST_ID, selectedPlaylistId});
+    };
 
   return (
     <Container>
@@ -37,7 +41,7 @@ export default function Playlist() {
             <ul>
                 {playlists.map(({name, id}) => {
                     return(
-                        <li key={id}>
+                        <li key={id} onClick={() => changeCurrPlaylist(id)}>
                             {name}
                         </li>
                     );
