@@ -3,7 +3,6 @@ import React, {useState, useEffect} from 'react'
 import mosque from "../assets/Images/mosque.jpg"
 
 export default function Header({items, today, city, setCity, setCountry}) {
-    const [search, setSearch] = useState("");
 
     const getValueInput = () => {
         let cityInpValue = document.getElementById("searchInp").value;
