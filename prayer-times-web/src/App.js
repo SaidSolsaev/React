@@ -8,6 +8,7 @@ import { Route, Routes} from "react-router-dom";
 import Navbar from './Components/Navbar';
 import Footer from './Components/Footer';
 import Qibla from './Components/Qibla';
+import Quran from './Components/Quran';
 
 function App() {
   const [items, setItems] = useState({});
@@ -37,19 +38,14 @@ function App() {
       <Navbar />
       {items.data ? (
       <Routes>
-        <Route exact path="/" element=
-            // <SalahCalender items={items} /> 
-            {<Header items={items} today={dateToday} city={city} setCity={setCity} setCountry={setCountry}/>}/>
+        <Route exact path="/" element={<Header items={items} today={dateToday} city={city} setCity={setCity} setCountry={setCountry}/>}/>
         <Route path='/salahcalender' element={<SalahCalender items={items} city={city} />} />
-        
+        <Route path='/qibla' element={<Qibla />} />
+        <Route path='/quran' element={<Quran />} />
       </Routes>
       ) : (
         <Loading />)} 
-
-        <Routes>
-          <Route path='/qibla' element={<Qibla />} />
-        </Routes>
-
+  
       <Footer />
     </Container>
   );

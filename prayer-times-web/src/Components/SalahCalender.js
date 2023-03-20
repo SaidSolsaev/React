@@ -17,25 +17,25 @@ export default function SalahCalender({items, city}) {
                         <th>Maghrib</th>
                         <th>Ishaa</th>
                     </tr>
-                    {items.data.map((days, key) =>
+                    {items.data.map((days) =>
                         <tr>
                             <td>
-                                <li key={key}>{days.date.readable}</li>
+                                <li key={days.date.readable}>{days.date.readable}</li>
                             </td>
                             <td>
-                                <li key={key}>{days.timings["Fajr"]}</li>
+                                <li key={days.timings["Fajr"]}>{days.timings["Fajr"]}</li>
                             </td>
                             <td>
-                                <li key={key}>{days.timings["Dhuhr"]}</li>
+                                <li key={days.timings["Dhuhr"]}>{days.timings["Dhuhr"]}</li>
                             </td>
                             <td>
-                                <li key={key}>{(days.timings["Asr"])}</li>
+                                <li key={days.timings["Asr"]}>{(days.timings["Asr"])}</li>
                             </td>
                             <td>
-                                <li key={key}>{days.timings["Maghrib"]}</li>
+                                <li key={days.timings["Maghrib"]}>{days.timings["Maghrib"]}</li>
                             </td>
                             <td>
-                                <li key={key}>{days.timings["Isha"]}</li>
+                                <li key={days.timings["Isha"]}>{days.timings["Isha"]}</li>
                             </td>
                         </tr>
                     )}

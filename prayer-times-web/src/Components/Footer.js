@@ -22,7 +22,6 @@ const Container = styled.div`
         background-color: #333;
         color: white;
         text-align: center;
-
     }
 
 `;
