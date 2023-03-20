@@ -1,11 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
-export default function SalahCalender({items}) {
+
+export default function SalahCalender({items, city}) {
   
     return (
         <Container>
             <div name="salahcalender" className='table'>
-                <h1>Salah Calender</h1>
+                <h1>Salah Calender for {city}</h1>
                 <h2>{items.data.map((days,key)=>days.date.hijri.month["en"][key])}/{items.data.map((days,key)=>days.date.gregorian.month["en"][key])}</h2>
                 <table id='monthCalender'>
                     <tr>

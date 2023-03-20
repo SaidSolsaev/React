@@ -8,12 +8,14 @@ export default function Navbar() {
     const navigate = useNavigate();
     const handleNav = () => navigate("/salahcalender")
     const goBack = () => navigate("/")
+    const goQibla = () => navigate("/qibla")
 
 
   return (
     <Container>
         <nav className='container'>
             <ul>
+                <li><button onClick={goQibla}>Qibla</button></li>
                 <li><button onClick={handleNav}>Calender</button></li>
                 <li><button onClick={goBack}>Home</button></li>
             </ul>

@@ -4,20 +4,20 @@ import Header from './Components/Header';
 import Loading from './Components/Loading';
 import SalahCalender from './Components/SalahCalender';
 import styled from 'styled-components';
-import {BrowserRouter as Router ,Link, Route, Routes, Navigate} from "react-router-dom";
+import { Route, Routes} from "react-router-dom";
 import Navbar from './Components/Navbar';
 import Footer from './Components/Footer';
+import Qibla from './Components/Qibla';
 
 function App() {
   const [items, setItems] = useState({});
-  const [method, setMethod] = useState(4);
+  // const [method, setMethod] = useState(4);
   const [city, setCity] = useState("Oslo");
   const [country, setCountry] = useState("Norway");
   const date = new Date();
   const dateToday = date.getDate();
   const year = date.getFullYear();
   const month = date.getMonth() + 1;
-  console.log(year)
 
 
   useEffect(() => {
@@ -28,26 +28,29 @@ function App() {
       .catch((e) => console.log(e));
     }
     fetchData();
-  }, [city]);
+  }, [city, country, year, month, country]);
 
   // console.log(items.data[dateToday-1].date.hijri.year)
   
   return (
     <Container>
       <Navbar />
+      {items.data ? (
       <Routes>
         <Route exact path="/" element=
-          {items.data ? (
             // <SalahCalender items={items} /> 
-            <Header items={items} today={dateToday} city={city} setCity={setCity} setCountry={setCountry}/>
-    
-          ) : (
-            <Loading />)} />
-          <Route path='/salahcalender' element={<SalahCalender items={items} />} />
+            {<Header items={items} today={dateToday} city={city} setCity={setCity} setCountry={setCountry}/>}/>
+        <Route path='/salahcalender' element={<SalahCalender items={items} city={city} />} />
+        
       </Routes>
-      <Footer />
+      ) : (
+        <Loading />)} 
 
-    
+        <Routes>
+          <Route path='/qibla' element={<Qibla />} />
+        </Routes>
+
+      <Footer />
     </Container>
   );
 }

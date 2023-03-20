@@ -9,7 +9,7 @@ export default function Header({items, today, city, setCity, setCountry}) {
         let cityInpValue = document.getElementById("searchInp").value;
         let countryInpValue = document.getElementById("searchCountryInp").value;
         // console.log(cityInpValue);
-        if (cityInpValue != "" && countryInpValue != ""){
+        if (cityInpValue !== "" && countryInpValue !== ""){
             setCity(cityInpValue);
             setCountry(countryInpValue);
         }else{
@@ -25,6 +25,9 @@ export default function Header({items, today, city, setCity, setCountry}) {
                     <div className="searchContainer">
                         <input className="searchCity" placeholder="Search for city" id="searchInp" required />
                         <input className="searchCountry" placeholder="Search for Country" id="searchCountryInp" required />
+                        
+                    </div>
+                    <div className="btnContainer">
                         <button className="searchBtn" onClick={getValueInput}>Search</button>
                     </div>
 
@@ -105,7 +108,6 @@ const Container = styled.div`
             td{
                 color: white;
             }
-            
         }
     }
 
@@ -136,23 +138,22 @@ const Container = styled.div`
         margin-left: 1rem;
         &::placeholder{
             color: rgba(255,255,255,0.6);
-            
         }
     }
 
     .searchBtn{
-        background-color: #4E9AF1;
+        background-color: #04AA6D;
         display: inline-block;
         padding: 0.3em 1.2em;
-        margin: 1rem 1rem;
+        margin: .5rem 0 3rem;
         border:0.16em solid rgba(255,255,255,0);
         border-radius:2em;
         box-sizing: border-box;
         text-decoration:none;
         font-weight:600;
-        text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
         text-align: center;
         transition: all 0.2s;
+        font-size: 18px;
         
         &:hover{
             border-color: rgba(255,255,255,1);
