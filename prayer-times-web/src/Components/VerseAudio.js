@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import styled from 'styled-components'
+import styled from 'styled-components';
+import {BsFillPlayCircleFill, BsFillPauseCircleFill} from "react-icons/bs"
 
 export default function VerseAudio({surahNm}) {
 
@@ -27,9 +28,6 @@ export default function VerseAudio({surahNm}) {
         return [playing, toggle]
     }
 
-    
-
-
     const [playing, toggle] = useAudio();
 
 
@@ -47,8 +45,17 @@ export default function VerseAudio({surahNm}) {
   
   
     return (
-        <div>
-            <button onClick={toggle}>{playing ? "Pause" : "Play"}</button>
-        </div>
+        <Container>
+            <div className='audioContainer'>
+                {playing ? <BsFillPauseCircleFill onClick={toggle} size="32px"/> : <BsFillPlayCircleFill onClick={toggle} size="36px" color='green'/>}
+            </div>
+        </Container>
     );
 };
+
+const Container = styled.div`
+    padding: 1rem;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+`;

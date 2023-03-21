@@ -4,11 +4,10 @@ import Quran from './Quran';
 
 
 export default function Verse({verse}) {
-    if (verse) {
-        console.log(verse.ayahs?.map((ayah) => ayah.text));
-    }
+    // if (verse) {
+    //     console.log(verse.ayahs?.map((ayah) => ayah.text));
+    // }
 
-    
     return (
         <Container>
             
@@ -29,6 +28,7 @@ const Container = styled.div`
     
 
     .verseContainer{
+        
         li{
             color: white;
             list-style-type: none;
@@ -36,6 +36,7 @@ const Container = styled.div`
             font-weight: 600;
             text-align: right;
             padding: .7rem;
+            margin-right: 0;
         }
     }
 

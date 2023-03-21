@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import axios from 'axios';
 import Verse from './Verse';
 import VerseAudio from './VerseAudio';
+import VerseTranslation from './VerseTranslation';
 
 export default function Quran() {
     const [quranText, setQuranText] = useState({});
@@ -10,7 +11,8 @@ export default function Quran() {
     const [postsError, setPostsError] = useState("");
     const [postsLoading, setPostsLoading] = useState(false);
     const [surahNm, setSurahNm] = useState(1);
-    const [audio, setAudio] = useState();
+    const [translation, setTranslation] = useState(false)
+    
 
     const handleFindSurah = () =>{
         let surahNm = document.getElementById("surahSearchInp").value;
@@ -46,13 +48,16 @@ export default function Quran() {
         handlePost();
     }, [surahNm]);
 
-    console.log(audio)
+    const handleTClick = () =>{
+        translation ? setTranslation(false) : setTranslation(true)
+        
+    };
 
-
-    if (quranText) {
-        console.log(quranText);
-    }
+    // if (quranText) {
+    //     console.log(quranText);
+    // }
     
+    console.log(translation)
 
     return (
         <Container>
@@ -69,15 +74,17 @@ export default function Quran() {
                     <h2 className='verseInfoText'>{quranText.englishName} - {quranText.name}</h2>
                     <h3>Surah Number: {quranText.number}</h3>
                 </div>
-            
-                <div className='surahContainer'>     
-                    <Verse verse={quranText}/>
-                </div>
-
+                
                 <div>
                     <VerseAudio surahNm={surahNm} />
+                    <button onClick={handleTClick}>{translation? "Arabic" :"English Translation"}</button>
                 </div>
-                
+            
+                <div className='surahContainer'>     
+                    {/* <VerseTranslation surahNm={surahNm} /> */}
+                    {translation ? <VerseTranslation surahNm={surahNm} /> : <Verse verse={quranText}/> }
+                    
+                </div>
             </div>
 
         </Container>
@@ -138,9 +145,8 @@ const Container = styled.div`
 
     .surahContainer{
         display: flex;
-        // align-items: center;
-        // justify-content: center;
-        width:70%;
+        // justify-content: cover;
+        width:100%;
         positon: relative;
         flex-direction: column;
         background-color: black;

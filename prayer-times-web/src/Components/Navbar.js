@@ -30,6 +30,7 @@ const Container = styled.div`
     nav{
         width: 100%;
         background-color: #333;
+        height: 70px;
     }
 
     ul{
@@ -38,7 +39,6 @@ const Container = styled.div`
         margin: 0;
         padding: 0;
         overflow: hidden;
-
     }
 
     li{
@@ -46,7 +46,6 @@ const Container = styled.div`
         justify-content: center;
         display: flex;
         float: right;
-        
         margin: 10px;
     }
 
@@ -62,7 +61,7 @@ const Container = styled.div`
     }
 
     li:hover{
-        background-color: #04AA6D;
+        border-bottom:3px solid #04AA6D;
     }
 
    

@@ -23,7 +23,7 @@ function App() {
 
   useEffect(() => {
     async function fetchData(){
-      fetch(`http://api.aladhan.com/v1/calendarByCity/${year}/${month}?city=${city}&country=${country}&method=0`)
+      fetch(`http://api.aladhan.com/v1/calendarByCity/${year}/${month}?city=${city}&country=${country}&method=1`)
       .then((res) => res.json())
       .then((data) => setItems(data))
       .catch((e) => console.log(e));
