@@ -11,43 +11,31 @@ export default function Verse({verse}) {
     
     return (
         <Container>
-            <div className='surahContainer'>
-                
+            
                 
                 <div className='verseContainer'>
                     {verse.ayahs?.map((ayah) =>{
                         return (
-                            <li key={ayah.text}>{ayah.text}</li>
+                            <li key={ayah.txt}>{ayah.text}</li>
                         )})}
                 </div>
-            </div>
+            
         </Container>
     );
 };
 
 
 const Container = styled.div`
-    .surahContainer{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        position: relative;
-        min-height: 100vh;
-        width: 100%;
-        positon: relative;
-        flex-direction: column;
-    }
-
     
 
     .verseContainer{
-        align-items: center;
-
         li{
             color: white;
             list-style-type: none;
             font-size: 32px;
             font-weight: 600;
+            text-align: right;
+            padding: .7rem;
         }
     }
 
