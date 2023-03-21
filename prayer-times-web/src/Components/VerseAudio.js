@@ -4,7 +4,7 @@ import styled from 'styled-components'
 export default function VerseAudio({surahNm}) {
 
     const useAudio = url => {
-        const [audio] = useState(new Audio(url));
+        const [audio, setAudio] = useState(new Audio(`https://cdn.islamic.network/quran/audio-surah/128/ar.alafasy/1.mp3`));
         const [playing, setPlaying] = useState(false);
         
         const toggle = () => setPlaying(!playing);
@@ -19,6 +19,10 @@ export default function VerseAudio({surahNm}) {
                 audio.removeEventListener("ended", () => setPlaying(false));
             };
         }, []);
+
+        useEffect(() => {
+            setAudio(new Audio(`https://cdn.islamic.network/quran/audio-surah/128/ar.alafasy/${surahNm}.mp3`))
+        }, [surahNm])
         
         return [playing, toggle]
     }
@@ -26,7 +30,7 @@ export default function VerseAudio({surahNm}) {
     
 
 
-    const [playing, toggle] = useAudio(`https://cdn.islamic.network/quran/audio-surah/128/ar.alafasy/${surahNm}.mp3`);
+    const [playing, toggle] = useAudio();
 
 
     // const handleAudio = async () =>{
