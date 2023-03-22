@@ -19,6 +19,7 @@ export default function Quran() {
         
         if (surahNm !== "" && surahNm <= 114 && surahNm >= 1){
             setSurahNm(surahNm);
+        
         }
         else if (surahNm > 114 || surahNm < 1){
             alert("There are only 114 surahs in the Quran")
@@ -26,7 +27,8 @@ export default function Quran() {
         else{
             alert("Fill in the inputs!")
         }
-        
+
+        document.getElementById("surahSearchInp").value = "";
         
     }
 
@@ -66,7 +68,7 @@ export default function Quran() {
                 {/* {postsError && <p>{postsError}</p>} */}
 
                 <div className='searchContainer'>
-                    <input id='surahSearchInp' placeholder='Search Surah number(example 112)...'/>
+                    <input id='surahSearchInp' placeholder='Surah number(1-114)...'/>
                     <button className='searchBtn' onClick={handleFindSurah}>Search</button>
                 </div>
 
@@ -77,7 +79,7 @@ export default function Quran() {
                 
                 <div>
                     <VerseAudio surahNm={surahNm} />
-                    <button onClick={handleTClick}>{translation? "Arabic" :"English Translation"}</button>
+                    <button className='translationBtn' onClick={handleTClick}>{translation? "Arabic" :"English Translation"}</button>
                 </div>
             
                 <div className='surahContainer'>     
@@ -165,6 +167,26 @@ const Container = styled.div`
         text-align: center;
         transition: all 0.2s;
         font-size: 18px;
+        cursor: pointer;
+        
+        &:hover{
+            border-color: rgba(255,255,255,1);
+        }
+    }
+
+    .translationBtn{
+        background-color: #04AA6D;
+        display: inline-block;
+        padding: 0.3em 1.2em;
+        border:0.16em solid rgba(255,255,255,0);
+        border-radius:2em;
+        box-sizing: border-box;
+        font-weight:600;
+        text-align: center;
+        transition: all 0.2s;
+        font-size: 18px;
+        cursor: pointer;
+        margin-bottom: .5rem;
         
         &:hover{
             border-color: rgba(255,255,255,1);

@@ -1,13 +1,41 @@
 import React from 'react'
 import styled from 'styled-components'
 
-export default function SalahCalender({items, city}) {
+export default function SalahCalender({items, city, setMonth}) {
+
+    const date = new Date();
+    const month = date.getMonth() + 1;
+
+    const handleChange = () =>{
+        let val = document.getElementById("dropdownMenu").value
+        console.log(val)
+        {setMonth(val)}
+    };
+
+
   
     return (
         <Container>
             <div name="salahcalender" className='table'>
                 <h1>Salah Calender for {city}</h1>
-                <h2>{items.data.map((days,key)=>days.date.hijri.month["en"][key])}/{items.data.map((days,key)=>days.date.gregorian.month["en"][key])}</h2>
+                <h2>{items.data?.map((days,key)=>days.date.hijri.month["en"][key])}/{items.data?.map((days,key)=>days.date.gregorian.month["en"][key])}</h2>
+                
+                <select placeholder="Month" id='dropdownMenu' onChange={handleChange}>
+                    <option name="" value={month}>Month</option>
+                    <option name="January" value="1">January</option>
+                    <option name="February" value="2">February</option>
+                    <option name="March" value="3">March</option>
+                    <option name="April" value="4">April</option>
+                    <option name="May" value="5">May</option>
+                    <option name="June" value="6">June</option>
+                    <option name="July" value="7">July</option>
+                    <option name="August" value="8">August</option>
+                    <option name="September" value="9">September</option>
+                    <option name="October" value="10">October</option>
+                    <option name="November" value="11">November</option>
+                    <option name="December" value="12">December</option>
+                </select>
+                
                 <table id='monthCalender'>
                     <tr>
                         <th>Date</th>
@@ -17,7 +45,7 @@ export default function SalahCalender({items, city}) {
                         <th>Maghrib</th>
                         <th>Ishaa</th>
                     </tr>
-                    {items.data.map((days) =>
+                    {items.data?.map((days) =>
                         <tr>
                             <td>
                                 <li key={days.date.readable}>{days.date.readable}</li>
@@ -94,6 +122,12 @@ const Container = styled.div`
                 list-style-type: none;
             }
         }
+    }
+
+    select{
+        height:30px;
+        width: 150px;
+        font-size: 24px;
     }
 
 `;

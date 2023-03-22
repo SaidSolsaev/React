@@ -15,7 +15,8 @@ html {
 
 body {
   font-family: "Amiri", sans-serif;
-  background-image: url(./assets/Images/mosque.jpg);
+  /* background-image: url(./assets/Images/mosque.jpg); */
+  background-color: black;
   background-size: cover;
   background-attachment: fixed;
   background-repeat: norepeat;

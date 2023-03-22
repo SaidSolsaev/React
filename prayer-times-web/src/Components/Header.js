@@ -64,8 +64,9 @@ export default function Header({items, today, city, setCity, setCountry}) {
 
 const Container = styled.div`
     width: 100%;
-
-    .table{        
+    
+    
+    .table{
         height: 200px;
         width: 80%;
         positon: relative;

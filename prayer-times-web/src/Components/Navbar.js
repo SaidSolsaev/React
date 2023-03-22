@@ -10,11 +10,13 @@ export default function Navbar() {
     const goBack = () => navigate("/")
     const goQibla = () => navigate("/qibla")
     const goQuran = () => navigate("/quran")
+    const goNames = () => navigate("/99-Names-of-God");
 
   return (
     <Container>
         <nav className='container'>
             <ul>
+            <li><button onClick={goNames}>99 Names of God</button></li>
                 <li><button onClick={goQuran}>Quran</button></li>
                 <li><button onClick={goQibla}>Qibla</button></li>
                 <li><button onClick={handleNav}>Calender</button></li>

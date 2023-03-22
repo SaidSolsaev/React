@@ -47,7 +47,7 @@ export default function VerseAudio({surahNm}) {
     return (
         <Container>
             <div className='audioContainer'>
-                {playing ? <BsFillPauseCircleFill onClick={toggle} size="32px"/> : <BsFillPlayCircleFill onClick={toggle} size="36px" color='green'/>}
+                {playing ? <BsFillPauseCircleFill onClick={toggle} size="36px" color='white'/> : <BsFillPlayCircleFill onClick={toggle} size="36px" color='green'/>}
             </div>
         </Container>
     );
