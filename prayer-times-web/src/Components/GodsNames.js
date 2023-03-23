@@ -7,10 +7,18 @@ export default function GodsNames() {
     const [loading, setPostsLoading] = useState(false);
     const [error, setPostsError] = useState("");
 
+    const options = {
+        method: "GET",
+        headers: {
+            'X-RapidAPI-Key': '0a3b0c9a9dmsh6a71589c16246c4p14c712jsn61e6482c0db2',
+            'X-RapidAPI-Host': 'allah-name.p.rapidapi.com'
+        }
+    };
+
     const handlePost = async () =>{
         setPostsLoading(true);
         try{
-            const result = await axios.get(`http://api.aladhan.com/asmaAlHusna`);
+            const result = await axios.get(`https://allah-name.p.rapidapi.com/name`, options);
             setNames(result.data);
         } catch (error) {
             setPostsError(error.message || "Unexpected Error!");
@@ -19,10 +27,12 @@ export default function GodsNames() {
         }
     };
 
+
     useEffect(() => {
         handlePost();
     }, []);
 
+    console.log(names)
 
     return (
         <Container>
@@ -35,25 +45,33 @@ export default function GodsNames() {
                             <th>Name</th>
                             <th>Transliteration</th>
                             <th>Meaning</th>
-                        
+                            <th>Explanation</th>
+                            <th>Benefit by saying</th>
                         </tr>
-                        {names.data?.map((name,nm) =>
+                        {names.main?.map((name,nm) =>
                         <tr>
-                            
                             <td className='number'>
-                                <li key={nm.numb}>{name.number}</li>
+                                <li key={nm.numb}>{name.id}</li>
                             </td>
                         
                             <td className='namesArabic'>
-                                <li key={nm.name}>{name.name}</li>
+                                <li key={nm.name}>{name.arName}</li>
                             </td>
                             
                             <td>
-                                <li key={nm.tl}>{name.transliteration}</li>
+                                <li key={nm.tl}>{name.enName}</li>
                             </td>
 
                             <td>
-                                <li key={nm.en}>{name.en.meaning}</li>
+                                <li key={nm.en}>{name.meaning}</li>
+                            </td>
+
+                            <td>
+                                <li className='expl' key={nm.ex}>{name.explanation}</li>
+                            </td>
+
+                            <td className='benefit'>
+                                <li key={nm.ex}>{name.benefit}</li>
                             </td>
                         </tr>
 
@@ -114,6 +132,14 @@ const Container = styled.div`
 
         .number{
             width: 50px;
+        }
+
+        .expl{
+            width: 300px;
+        }
+
+        .benefit{
+            width: 400px;
         }
     }
     
