@@ -11,6 +11,7 @@ import Qibla from './Components/Qibla';
 import Quran from './Components/Quran';
 import GodsNames from './Components/GodsNames';
 
+
 function App() {
   const date = new Date();
   const dateToday = date.getDate();

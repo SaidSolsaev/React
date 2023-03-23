@@ -21,8 +21,6 @@ export default function VerseTranslation({surahNm}) {
         }
     };
 
-    console.log(translationText)
-
     useEffect(() => {
         handlePost();
     }, [surahNm]);

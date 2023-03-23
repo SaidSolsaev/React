@@ -1,13 +1,12 @@
 import styled from "styled-components"
-import React, {useState, useEffect} from 'react'
-import mosque from "../assets/Images/mosque.jpg"
+import React from 'react'
 
 export default function Header({items, today, city, setCity, setCountry}) {
 
     const getValueInput = () => {
         let cityInpValue = document.getElementById("searchInp").value;
         let countryInpValue = document.getElementById("searchCountryInp").value;
-        // console.log(cityInpValue);
+        
         if (cityInpValue !== "" && countryInpValue !== ""){
             setCity(cityInpValue);
             setCountry(countryInpValue);

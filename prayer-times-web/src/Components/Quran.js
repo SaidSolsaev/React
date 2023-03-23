@@ -7,12 +7,10 @@ import VerseTranslation from './VerseTranslation';
 
 export default function Quran() {
     const [quranText, setQuranText] = useState({});
-    const [edition, setEdition] = useState("en.asad");
     const [postsError, setPostsError] = useState("");
     const [postsLoading, setPostsLoading] = useState(false);
     const [surahNm, setSurahNm] = useState(1);
     const [translation, setTranslation] = useState(false)
-    
 
     const handleFindSurah = () =>{
         let surahNm = document.getElementById("surahSearchInp").value;
@@ -54,18 +52,12 @@ export default function Quran() {
         translation ? setTranslation(false) : setTranslation(true)
         
     };
-
-    // if (quranText) {
-    //     console.log(quranText);
-    // }
     
-    console.log(translation)
-
     return (
         <Container>
             <div className='container'>
                 {postsLoading && <p>Quran verse is loading</p>}
-                {/* {postsError && <p>{postsError}</p>} */}
+                {postsError && <p>{postsError}</p>}
 
                 <div className='searchContainer'>
                     <input id='surahSearchInp' placeholder='Surah number(1-114)...'/>

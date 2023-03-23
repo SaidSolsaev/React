@@ -8,12 +8,9 @@ export default function SalahCalender({items, city, setMonth}) {
 
     const handleChange = () =>{
         let val = document.getElementById("dropdownMenu").value
-        console.log(val)
         {setMonth(val)}
     };
 
-
-  
     return (
         <Container>
             <div name="salahcalender" className='table'>

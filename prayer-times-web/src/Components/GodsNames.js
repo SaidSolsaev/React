@@ -6,7 +6,7 @@ export default function GodsNames() {
     const [names, setNames] = useState({});
     const [loading, setPostsLoading] = useState(false);
     const [error, setPostsError] = useState("");
-    
+
     const handlePost = async () =>{
         setPostsLoading(true);
         try{
@@ -23,7 +23,6 @@ export default function GodsNames() {
         handlePost();
     }, []);
 
-    console.log(names.data);
 
     return (
         <Container>
