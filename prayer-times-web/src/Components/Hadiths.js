@@ -6,15 +6,10 @@ export default function Hadiths() {
 
     const [hadith, setHadith] = useState(null);
 
-   
-
 
     // useEffect(() => {
     //     handlePost();
     // }, []);
-
-
-   
 
 
     return (
