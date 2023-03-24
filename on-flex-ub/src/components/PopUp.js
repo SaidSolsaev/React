@@ -17,7 +17,7 @@ export default function () {
                         <div className='closeTab'>
                             <span><AiOutlineClose size={28} onClick={() => setIsOpen(false)} /></span>
                         </div>
-                        <div className='popup-header'>'
+                        <div className='popup-header'>
                             <h1>Prouktet kommer snart</h1>
                             <h2>Tusen takk for forståelsen og Tålmodigheten</h2>
                         </div>
@@ -37,7 +37,7 @@ export default function () {
 const Container = styled.div`
     text-align: center;
     display: flex;
-    
+    padding-top: 150px;
 
     button{
         background-color: #04AA6D;
@@ -54,6 +54,8 @@ const Container = styled.div`
         cursor: pointer;
         margin-right: auto;
         margin-left: auto;
+        color: white;
+        
         
         &:hover{
             border-color: rgba(255,255,255,1);
@@ -63,9 +65,9 @@ const Container = styled.div`
     .popup{
         height: 500px;
         width: 50%;
-        background-color: green;
+        background-color: #8FBC8F;
         top: 25%;
-        position: absolute;
+        position: fixed;
         right: 25%;
         display: flex;
         flex-direction: column;
@@ -74,7 +76,7 @@ const Container = styled.div`
     .closeTab{
         width: 30px;
         margin-left: auto;    
-        
+        cursor: pointer;
     }
 
     .popup-header{
@@ -86,8 +88,27 @@ const Container = styled.div`
     }
 
     @media (max-width: 500px){
-        margin-top: 40px;
+        padding-top: 100px;
         justify-content: center;
+
+        .popup{
+            width: 80%;
+            left: 10%;
+        }
+
+
+        .popup-header{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 100px 30px 0 15px;
+            align-items: center;
+        }
+
+        button{
+            color: white;
+        }
+    
     }
 
     

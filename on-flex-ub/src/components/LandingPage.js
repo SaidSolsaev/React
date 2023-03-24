@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 import PopUp from './PopUp';
+import sticker from "../assets/images/refleks-stickers.jpg"
+import "animate.css";
 
 export default function LandingPage() {
   
@@ -18,14 +20,15 @@ export default function LandingPage() {
 
             <div className='image-card'>
                 <div className='image-container'>
-                    <img />
-                    Bilde av refleks (eksempel)
+                    <img src={sticker} alt="Refleks"/>
+                    {/* Bilde av refleks (eksempel) */}
+                </div>
+
+                <div className='continueBtn'>
+                    <PopUp />
                 </div>
             </div>
 
-            <div className='continueBtn'>
-                <PopUp />
-            </div>
         </Container>
     );
 };
@@ -43,6 +46,7 @@ const Container = styled.div`
         display: flex;
         flex-direction: column;
         width: 500px;
+        
 
         .heading-text{
             text-align: center;
@@ -50,6 +54,7 @@ const Container = styled.div`
             h1{
                 color: white;
                 font-size: 38px;
+
             }
 
             h3{
@@ -71,11 +76,16 @@ const Container = styled.div`
         margin-left: 2rem;
         width: 300px;
         height: 50vh;
-        background-color: white;
-        border-radius: 15%;
+        // background-color: white;
+        border-radius: 30%;
 
         .image-container{
             text-align: center;
+        }
+
+        img{
+            width: 300px;
+            border-radius: 25%;
         }
     }
 
@@ -118,7 +128,7 @@ const Container = styled.div`
             margin-left: 0;
             width: 300px;
             height: 50vh;
-            background-color: white;
+            // background-color: white;
             margin-top: 70px;
     
             .image-container{
