@@ -1,16 +1,17 @@
 import React, { useState } from 'react'
-import ReactModal from 'react-modal';
 import styled from 'styled-components';
 import {AiOutlineClose} from "react-icons/ai";
 
 
 
-export default function () {
+export default function PopUp() {
     const [isOpen, setIsOpen] = useState(false);
     
     return (
         <Container>
-            <button onClick={() => setIsOpen(true)}>Sjekk ut produktet vårt!</button>
+            <div className='container'>
+                <button onClick={() => setIsOpen(true)}>Sjekk ut produktet vårt!</button>
+            </div>
             {isOpen ? (
                 <div className='main'>
                     <div className='popup'>
@@ -37,8 +38,14 @@ export default function () {
 const Container = styled.div`
     text-align: center;
     display: flex;
-    padding-top: 150px;
-
+    background-color: #333;
+    // padding-bottom: 200px;
+    
+    .container{
+        width: 100%;
+        height: 150px;
+    }
+    
     button{
         background-color: #04AA6D;
         display: inline-block;
@@ -88,14 +95,13 @@ const Container = styled.div`
     }
 
     @media (max-width: 500px){
-        padding-top: 100px;
+        // padding-top: 100px;
         justify-content: center;
 
         .popup{
             width: 80%;
             left: 10%;
         }
-
 
         .popup-header{
             display: flex;

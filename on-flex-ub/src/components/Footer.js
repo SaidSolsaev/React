@@ -1,14 +1,15 @@
 import React from 'react'
 import styled from 'styled-components';
-import {AiOutlineArrowRight} from 'react-icons/ai';
 
 
 export default function Footer() {
     return (
         <Container>
             <div className='container'>
-                <h3>Created by Said Solsaev &copy;</h3>
-                <h4><a href='https://github.com/SaidSolsaev'>Klikk her for flere prosjekter</a></h4>
+                <div className='footer-text'>
+                    <h3>Created by Said Solsaev &copy;</h3>
+                    <h4><a href='https://github.com/SaidSolsaev'>Klikk her for flere prosjekter</a></h4>
+                </div>
             </div>
         </Container>
     );
@@ -19,7 +20,6 @@ const Container = styled.div`
     background-color: #333;
 
     .container{
-        padding: 20px 0;
         background-color: #333;
         text-align: center;
         // display: flex;
@@ -35,6 +35,11 @@ const Container = styled.div`
         a{
             text-decoration: none;
             color: #bbb;
+        }
+
+        .footer-text{
+            border-top: 1px solid #bbb;
+            padding-top: 20px;
         }
     }
 `;

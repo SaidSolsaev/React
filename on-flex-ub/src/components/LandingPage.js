@@ -1,8 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import PopUp from './PopUp';
 import sticker from "../assets/images/refleks-stickers.jpg"
-import "animate.css";
 
 export default function LandingPage() {
   
@@ -24,9 +22,9 @@ export default function LandingPage() {
                     {/* Bilde av refleks (eksempel) */}
                 </div>
 
-                <div className='continueBtn'>
+                {/* <div className='continueBtn'>
                     <PopUp />
-                </div>
+                </div> */}
             </div>
 
         </Container>
@@ -34,7 +32,7 @@ export default function LandingPage() {
 };
 
 const Container = styled.div`
-    height: 100vh;
+    height: 80vh;
     background-color: #333;
     display: flex;
     flex-direction: flex-column;
@@ -54,7 +52,7 @@ const Container = styled.div`
             h1{
                 color: white;
                 font-size: 38px;
-
+                font-family: 'Piazzolla', serif;
             }
 
             h3{
