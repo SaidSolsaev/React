@@ -152,12 +152,10 @@ const Container = styled.div`
             .box{
                 height: 400px;
 
-                margin-top: 2rem;
-                margin-bottom: 2rem;
                 
                 .box-content{
-
-                    
+                    margin-top: 2rem;
+                    margin-bottom: 2rem;
                 }
             }
             
