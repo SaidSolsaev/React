@@ -140,7 +140,7 @@ const Container = styled.div`
 
     @media (max-width: 600px){
         .teamContainer{
-            height: 150vh;
+            height: 180vh;
             background-color: #333;
         }
 
@@ -151,15 +151,7 @@ const Container = styled.div`
             
             .box{
                 height: 400px;
-
-                
-                .box-content{
-                    margin-top: 2rem;
-                    margin-bottom: 2rem;
-                }
             }
-            
         }
-    
     }
 `;
