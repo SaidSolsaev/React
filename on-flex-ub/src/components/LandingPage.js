@@ -6,7 +6,7 @@ export default function LandingPage() {
   
     return (
 
-        <Container>
+        <Container id='home'>
             <div className='welcome-card'>
                 <div className='heading-text'> 
                     <h1>Bli sett. Bruk Refleks</h1>
