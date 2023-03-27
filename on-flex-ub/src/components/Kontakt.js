@@ -4,7 +4,7 @@ import emailjs from "emailjs-com";
 import Swal from "sweetalert2";
 
 
-const SERVICE_ID = "service_2e7w0kd";
+const SERVICE_ID = "service_yd0uc2h";
 const TEMPLATE_ID = "template_wfv0tm7";
 const USER_ID = "Y4pvRsKGDxZzSm-IL";
 
@@ -13,13 +13,11 @@ export default function Kontakt() {
     const handleOnSubmit = (e) => {
         e.preventDefault();
         emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, e.target, USER_ID).then((result) => {
-            console.log(result.text);
             Swal.fire({
                 icon: "success",
                 title: "Message Sent Successfully!"
             })
         }, (error) => {
-            console.log(error.text);
             Swal.fire({
                 icon: "error",
                 title: "Something went wrong. Try again!",

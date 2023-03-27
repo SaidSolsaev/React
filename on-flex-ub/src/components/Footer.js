@@ -8,7 +8,7 @@ export default function Footer() {
             <div className='container'>
                 <div className='footer-text'>
                     <h3>Created by Said Solsaev &copy;</h3>
-                    <h4><a href='https://github.com/SaidSolsaev'>Klikk her for flere prosjekter</a></h4>
+                    <h4><a href='https://github.com/SaidSolsaev' target="_blank">Klikk her for flere prosjekter</a></h4>
                 </div>
             </div>
         </Container>
