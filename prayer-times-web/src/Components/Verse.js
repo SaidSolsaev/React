@@ -1,17 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
-import Quran from './Quran';
 
 
 export default function Verse({verse}) {
-    // if (verse) {
-    //     console.log(verse.ayahs?.map((ayah) => ayah.text));
-    // }
-
+    
     return (
         <Container>
-            
-                
                 <div className='verseContainer'>
                     {verse.ayahs?.map((ayah) =>{
                         return (

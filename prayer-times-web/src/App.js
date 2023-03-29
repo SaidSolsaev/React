@@ -10,6 +10,9 @@ import Footer from './Components/Footer';
 import Qibla from './Components/Qibla';
 import Quran from './Components/Quran';
 import GodsNames from './Components/GodsNames';
+import ChatBot from './Components/ChatBot';
+import Hadiths from './Components/Hadiths';
+
 
 function App() {
   const date = new Date();
@@ -45,10 +48,13 @@ function App() {
         <Route path='/qibla' element={<Qibla />} />
         <Route path='/quran' element={<Quran />} />
         <Route path='/99-Names-of-God' element={<GodsNames />} />
+        <Route path='/hadiths' element={<Hadiths />} />
       </Routes>
       ) : (
         <Loading />)} 
-  
+
+
+      <ChatBot />
       <Footer />
     </Container>
   );

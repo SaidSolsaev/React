@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react'
 import styled from 'styled-components';
-import Loading from './Loading';
 
 
 
@@ -8,15 +7,13 @@ export default function Qibla() {
     const [qiblaDir, setQiblaDir] = useState({});
     const [lat, setLat] = useState();
     const [lng, setLng] = useState();
+    
     navigator.geolocation.getCurrentPosition(function (position) {
-        // console.log("Lat: ", position.coords.latitude)
-        // console.log("Lng: ", position.coords.longitude)
         setLat(position.coords.latitude);
         setLng(position.coords.longitude);
     });
 
-    // console.log(lat);
-    // console.log(lng);
+    
 
     useEffect(() => {
         async function fetchData(){

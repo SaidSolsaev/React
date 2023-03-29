@@ -30,19 +30,6 @@ export default function VerseAudio({surahNm}) {
 
     const [playing, toggle] = useAudio();
 
-
-    // const handleAudio = async () =>{
-    //     setPostsLoading(true);
-    //     try{
-    //         const result = await axios.get(`https://cdn.islamic.network/quran/audio-surah/128/ar.alafasy/1.mp3`);
-    //         setAudio(result);
-    //     } catch (error) {
-    //         setPostsError(error.message || "Unexpected Error!");
-    //     } finally {
-    //         setPostsLoading(false);
-    //     }
-    // };
-  
   
     return (
         <Container>
