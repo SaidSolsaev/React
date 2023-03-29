@@ -1,7 +1,7 @@
 import React from 'react'
 
-export default function Cell() {
-    return (
-        <div>Cell</div>
-    )
+const Cell = ({id}) => {
+    return <span className='cell'></span>
 }
+
+export default Cell;
