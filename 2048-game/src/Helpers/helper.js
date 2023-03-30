@@ -48,7 +48,7 @@ class Tile {
         return this.mergedInto ? this.mergedInto.row : this.row;
     }
 
-    toRow() {
+    toColumn() {
         return this.mergedInto ? this.mergedInto.column : this.column;
     }
 
@@ -172,8 +172,9 @@ class Board {
 
     clearOldTiles(){
         this.tiles = this.tiles.filter((tile) => tile.markForDeletion === false);
-        this.tile.forEach((tile) => {
-            this.markForDeletion = true;
+        
+        this.tiles.forEach((tile) => {
+            tile.markForDeletion = true;
         });
     }
 

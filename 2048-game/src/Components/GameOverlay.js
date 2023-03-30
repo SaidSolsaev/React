@@ -1,5 +1,5 @@
 import React from "react";
-import TryAgainLogo from "../assets/img/try-again.gif";
+import TryAgainLogo from "../assets/try-again.gif";
 
 const GameOverlay = ({ onRestart, board }) => {
   if (board.hasWon()) {
@@ -9,7 +9,7 @@ const GameOverlay = ({ onRestart, board }) => {
       <div className="gameOver" onClick={onRestart}>
         <img
           src={TryAgainLogo}
-          alt="Inténtalo de nuevo!!"
+          alt="Try again"
           style={{
             width: "100%",
             height: "100%",

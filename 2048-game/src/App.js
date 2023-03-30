@@ -1,11 +1,13 @@
 
-import './App.css';
+import BoardView from './Components/Board';
 
 function App() {
 
   return (
-    <div className="App">
-    </div>
+    <>
+      <h1>2048</h1>
+      <BoardView />
+    </>
   );
 }
 
